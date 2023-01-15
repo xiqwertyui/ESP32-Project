@@ -54,20 +54,20 @@ void setup(void) {
     Serial.println(F("Error initialising BH1750"));
   }
   wifi_setup();
+  configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
   pinMode(readyLED, OUTPUT);
   digitalWrite(readyLED, HIGH);
 }
 
 void loop(void) {
-  configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
   u8g2.setFont(u8g2_font_ncenB08_tf);  // 设置屏幕上显示的字体
   u8g2.firstPage();
   do {
+    printLocalTime(u8g2, 0, 20);
     float lux = lightMeter.readLightLevel();
-    u8g2.setCursor(0, 20);
+    u8g2.setCursor(0, 35);
     u8g2.print("Light: ");
     u8g2.print(lux);
     u8g2.print(" lx");
-    printLocalTime(u8g2, 0, 35);
   } while (u8g2.nextPage());
 }
