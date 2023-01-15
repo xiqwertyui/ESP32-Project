@@ -24,5 +24,12 @@
     link
       - https://amzn.asia/d/6Vz5Vp6
 
+# Start
+  - configure you wifi in **main.cpp**
+    `` const char* ssid = "YOUR WIFI NAME"; ``
+    `` const char* password = "YOUR WIFI PASSWORD"; ``
+  - use platformio to upload code to the board
+  - wait for the LED turn on
+
 # Project preview
   - ![plot](./screenshot.png)
