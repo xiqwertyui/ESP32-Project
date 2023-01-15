@@ -8,7 +8,7 @@
       - wide light intensity range
     link
       - https://amzn.asia/d/aXa3jAT
-  ## Screen -> display
+  ## 128x64 1.3 inch OLED Screen -> display
     param
       - driver: SH1106
       - display Type: OLED
